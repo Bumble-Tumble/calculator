@@ -1,0 +1,8 @@
+.body{
+    display: flex;
+}
+.div{
+    border-color: black;
+    height: 500px;
+    width: 500px;
+}

@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class ="screen"></div>
+        <div class = "buttonContainer">
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+            <button></button>
+        </div>
+    </div>
 </body>
 <script>
 //functions to add/subtract/multiply/divide
@@ -26,6 +48,9 @@
         else if (operator === "divide"){divide(a,b)}; 
     };
 
-
+  let container =  document.querySelector(".container");
+  let screen = document.querySelector(".screen");
+  let buttonContainer = document.querySelector(".buttonContainer")
+ screen.textContent = "1 + 2 = 3";
 </script>
 </html>
