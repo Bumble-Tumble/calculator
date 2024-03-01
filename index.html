@@ -9,6 +9,23 @@
     
 </body>
 <script>
+//functions to add/subtract/multiply/divide
     function add(a,b){return a+b};
+    function subtract(a,b){return a-b};
+    function multiply(a,b){return a*b};
+    function divide(a,b){return a/b};
+    
+    let number1 = 0;
+    let operator = "n/a"
+    let number2 = 0;
+//choose wether to add, subtract, multiply, or divide
+    function operate(a,b,c){
+        if (operator === "add"){add(a,b)}
+        else if(operator === "subtract"){subtract(a,b)}
+        else if (operator === "multiply"){multiply(a,b)}
+        else if (operator === "divide"){divide(a,b)}; 
+    };
+
+
 </script>
 </html>
