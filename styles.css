@@ -1,8 +1,31 @@
-.body{
+
+body{
     display: flex;
+    justify-content: center;
 }
-.div{
+.container{
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 15%;
     border-color: black;
-    height: 500px;
-    width: 500px;
+    border-width: 1px;
+    border-style: solid;
+    padding: 10px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.buttonContainer{
+    display: flex;
+    flex-direction: column;
+
+}
+button{
+    width: 50px;
+    height: 20px;
+    margin: 10px;
+}
+.screen{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
 }
