@@ -10,12 +10,14 @@
     <div class="container">
         <div class ="screen"></div>
         <div >
-            <div class ="btnBox1">
+            <div>
+             <button class="clearBtn"></button>   
+            </div>
+            <div>
             <button class ="btn1 numberBtn"></button>
             <button class = "btn2 numberBtn"></button>
             <button class ="btn3 numberBtn"></button>
-            <button class ="divideBtn operatorBtn"></button>
-            <button class="clearBtn"></button>
+            <button class ="divideBtn operatorBtn"></button>          
             </div>
             <div >
             <button class="btn4 numberBtn"></button>
@@ -47,7 +49,7 @@
     
     let number1 = "0";
     let operator = "n/a"
-    let number2 = "0";
+    let number2 = "n/a";
 //choose wether to add, subtract, multiply, or divide
     function operate(a,b,c){
         if (c === "+"){return add(a,b)}
@@ -125,9 +127,11 @@ equalBtn.addEventListener('click',equalButtonClick);
 function clearBtnClick(event){
     screen.textContent = "";
     number1 = "0";
-    number2 = "0";
+    number2 = "n/a";
     operator = "n/a"
 };
 clearBtn.addEventListener('click',clearBtnClick);
+
+
 </script>
 </html>
