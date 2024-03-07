@@ -47,9 +47,10 @@
     function multiply(a,b){return a*b};
     function divide(a,b){return a/b};
     
-    let number1 = "0";
-    let operator = "n/a"
+    let number1 = "n/a";
+    let operator = "n/a";
     let number2 = "n/a";
+    let operatorCount = 0;
 //choose wether to add, subtract, multiply, or divide
     function operate(a,b,c){
         if (c === "+"){return add(a,b)}
@@ -102,7 +103,7 @@ let operatorBtns = document.querySelectorAll('.operatorBtn')
 
 //adds a eventlistener to each button so when a button is clicked that button's associated number/operator appears on screen
 function numberButtonClick(event){
-    if( (screen.textContent ==="+"||screen.textContent ==="-"||screen.textContent ==="x"||screen.textContent ==="/")){screen.textContent = ""}
+    if((screen.textContent ==="+"||screen.textContent ==="-"||screen.textContent ==="x"||screen.textContent ==="/"||number2 != "n/a")){screen.textContent = ""}
     let buttonText = event.target.textContent;
     screen.textContent = screen.textContent + buttonText;
 };
@@ -111,13 +112,21 @@ numberBtns.forEach(button => {
 });
 function operatorButtonClick(event){
     let buttonText = event.target.textContent;
+    
+    if (operatorCount === 0){
+       number1 = screen.textContent; 
+       operatorCount = 1;
+    screen.textContent = buttonText;       
+    } else if (operatorCount === 1){
+        number2 = screen.textContent
+        screen.textContent = operate(+number1,+number2,operator);
+        number1 = screen.textContent;
+    }
     operator = buttonText;
-    number1 = screen.textContent;
-    screen.textContent = buttonText;
 };
 operatorBtns.forEach(button => {
     button.addEventListener('click', operatorButtonClick);
-})
+});
 function equalButtonClick(event){
     number2 = screen.textContent;
     screen.textContent = operate(+number1,+number2,operator);
@@ -128,7 +137,8 @@ function clearBtnClick(event){
     screen.textContent = "";
     number1 = "0";
     number2 = "n/a";
-    operator = "n/a"
+    operator = "n/a";
+    operatorCount = 0;
 };
 clearBtn.addEventListener('click',clearBtnClick);
 
